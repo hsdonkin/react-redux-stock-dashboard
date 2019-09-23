@@ -12,10 +12,13 @@ import ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
 // redux
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+// thunk
+import thunk from "redux-thunk";
 import reducer from "./reducers";
 const store = createStore(
   reducer,
+  applyMiddleware(thunk),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

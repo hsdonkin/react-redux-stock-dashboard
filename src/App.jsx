@@ -1,11 +1,10 @@
 import React from "react";
 import { BrowserRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { loadStocks, addSymbol, removeSymbol } from "./actions/index.js";
+import {} from "./actions/index.js";
 import { v4 } from "uuid";
 
 // components
-import StockList from "./components/StockList";
 
 class App extends React.Component {
   constructor(props) {
