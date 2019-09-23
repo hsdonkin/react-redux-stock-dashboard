@@ -7,8 +7,8 @@ import { fetchBatchStockData, fetchDailyStockData } from "./actions";
 
 // components
 import Header from "./components/Header";
-
 import StocksSidebar from "./components/StocksSidebar";
+import Chart from "./components/Chart";
 
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class App extends React.Component {
         <div className="page-wrap">
           <Header />
           <StocksSidebar />
+          <Chart />
         </div>
       </BrowserRouter>
     );
