@@ -1,0 +1,69 @@
+{
+  "Meta Data": {
+    "1. Information": "Batch Stock Market Quotes",
+    "2. Notes": "IEX Real-Time",
+    "3. Time Zone": "US/Eastern"
+  },
+  "Stock Quotes": [
+    {
+      "1. symbol": "AAPL",
+      "2. price": "218.8100",
+      "3. volume": "11261265",
+      "4. timestamp": "2019-09-23 13:02:30"
+    },
+    {
+      "1. symbol": "MSFT",
+      "2. price": "139.2600",
+      "3. volume": "8678216",
+      "4. timestamp": "2019-09-23 13:02:33"
+    },
+    {
+      "1. symbol": "TSLA",
+      "2. price": "243.8900",
+      "3. volume": "3035792",
+      "4. timestamp": "2019-09-23 12:41:59"
+    },
+    {
+      "1. symbol": "HEXO",
+      "2. price": "4.4150",
+      "3. volume": "3865206",
+      "4. timestamp": "2019-09-23 13:00:28"
+    },
+    {
+      "1. symbol": "HP",
+      "2. price": "43.2600",
+      "3. volume": "262836",
+      "4. timestamp": "2019-09-23 13:01:30"
+    },
+    {
+      "1. symbol": "F",
+      "2. price": "9.1700",
+      "3. volume": "10059036",
+      "4. timestamp": "2019-09-23 13:02:27"
+    },
+    {
+      "1. symbol": "NVDA",
+      "2. price": "176.1000",
+      "3. volume": "3931254",
+      "4. timestamp": "2019-09-23 12:59:55"
+    },
+    {
+      "1. symbol": "AMZN",
+      "2. price": "1785.7050",
+      "3. volume": "1935924",
+      "4. timestamp": "2019-09-23 12:58:00"
+    },
+    {
+      "1. symbol": "FDX",
+      "2. price": "146.0700",
+      "3. volume": "2476254",
+      "4. timestamp": "2019-09-23 13:01:45"
+    },
+    {
+      "1. symbol": "UPS",
+      "2. price": "119.3900",
+      "3. volume": "1230361",
+      "4. timestamp": "2019-09-23 13:02:28"
+    }
+  ]
+}

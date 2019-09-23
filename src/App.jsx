@@ -3,8 +3,12 @@ import { BrowserRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {} from "./actions/index.js";
 import { v4 } from "uuid";
+import { fetchBatchStockData } from "./actions";
 
 // components
+import Header from "./components/Header";
+import Area from "./components/Area";
+import StocksSidebar from "./components/StocksSidebar";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,10 +16,14 @@ class App extends React.Component {
     this.state = { key: v4() };
   }
 
+  componentDidMount = () => {
+    this.props.dispatch(fetchBatchStockData(["TSLA", "MSFT"]));
+  };
+
   render() {
     return (
       <BrowserRouter>
-        <h1>App is working</h1>
+        <div className="page-wrap"></div>
       </BrowserRouter>
     );
   }
