@@ -1,5 +1,6 @@
 import * as constants from "./../constants";
 
+// the reducer handles updating the state, dispatch requests arrive here with the action type and the payload
 const batchStockData = (state = constants.initialState, action) => {
   switch (action.type) {
     case constants.REQUEST_BATCH_STOCK_DATA:
