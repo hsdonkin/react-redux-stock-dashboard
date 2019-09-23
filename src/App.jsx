@@ -3,7 +3,7 @@ import { BrowserRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {} from "./actions/index.js";
 import { v4 } from "uuid";
-import { fetchBatchStockData } from "./actions";
+import { fetchBatchStockData, fetchDailyStockData } from "./actions";
 
 // components
 import Header from "./components/Header";
@@ -20,6 +20,7 @@ class App extends React.Component {
     this.props.dispatch(
       fetchBatchStockData(["TSLA", "MSFT", "AAPL", "F", "NVDA", "HEXO"])
     );
+    this.props.dispatch(fetchDailyStockData("TLSA"));
   };
 
   render() {

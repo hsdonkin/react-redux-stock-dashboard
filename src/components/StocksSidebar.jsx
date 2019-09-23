@@ -13,13 +13,6 @@ class StocksSidebar extends React.Component {
     this.state = { key: v4() };
   }
 
-  componentDidMount = () => {
-    // trying to just continually update component until it has data
-    // if (this.props.state.batchStockData.loading === true) {
-    //   this.forceUpdate();
-    // }
-  };
-
   render() {
     let stocksList;
     if (this.props.state.batchStockData.loading === false) {
@@ -30,7 +23,6 @@ class StocksSidebar extends React.Component {
           return <Stock key={v4()} stock={stock} />;
         }
       );
-      console.log(stocksList);
     }
     return <div>{stocksList}</div>;
   }

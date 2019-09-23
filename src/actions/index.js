@@ -32,3 +32,28 @@ export const updateBatchStockData = json => ({
   type: types.UPDATE_BATCH_STOCK_DATA,
   json: json
 });
+
+export const requestDailyStockData = symbol => ({
+  type: types.REQUEST_DAILY_STOCK_DATA,
+  symbol: symbol
+});
+
+export function fetchDailyStockData(symbol) {
+  return function(dispatch) {
+    dispatch(requestDailyStockData(symbol));
+    return fetch(
+      `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&apikey=${
+        process.env["API_KEY"]
+      }&symbol=TSLA&interval=15min`
+    )
+      .then(response => response.json())
+      .then(json => {
+        dispatch(updateDailyStockData(json));
+      });
+  };
+}
+
+export const updateDailyStockData = json => ({
+  type: types.UPDATE_DAILY_STOCK_DATA,
+  json: json
+});
