@@ -1,3 +1,5 @@
+// these constants are to set up the inital state for the app, as well as standardize the action types
+
 export const initialState = {
   loading: true,
   ["Meta Data"]: {},

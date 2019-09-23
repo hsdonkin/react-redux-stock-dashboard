@@ -7,23 +7,28 @@ import { fetchBatchStockData } from "./actions";
 
 // components
 import Header from "./components/Header";
-import Area from "./components/Area";
+
 import StocksSidebar from "./components/StocksSidebar";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { key: v4() };
+    this.state = {};
   }
 
   componentDidMount = () => {
-    this.props.dispatch(fetchBatchStockData(["TSLA", "MSFT"]));
+    this.props.dispatch(
+      fetchBatchStockData(["TSLA", "MSFT", "AAPL", "F", "NVDA", "HEXO"])
+    );
   };
 
   render() {
     return (
       <BrowserRouter>
-        <div className="page-wrap"></div>
+        <div className="page-wrap">
+          <Header />
+          <StocksSidebar />
+        </div>
       </BrowserRouter>
     );
   }

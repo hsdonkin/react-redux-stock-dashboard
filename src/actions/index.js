@@ -1,10 +1,11 @@
+// types are constants to standardize the action types
 import * as types from "./../constants";
 import v4 from "uuid";
 
-export const requestBatchStockData = symbols => ({
-  type: types.REQUEST_BATCH_STOCK_DATA,
-  symbols: symbols
-});
+// this is the first function to fire
+// first, it dispatches an action to the store, telling it to change the status to loading:true
+// then, it calls the api
+// when the api response returns, it dispatches another action to update the data in the redux store, and change the status to loading: false
 
 export function fetchBatchStockData(symbols) {
   return function(dispatch) {
@@ -17,11 +18,15 @@ export function fetchBatchStockData(symbols) {
     )
       .then(response => response.json())
       .then(json => {
-        console.log("This is the json response", json);
         dispatch(updateBatchStockData(json));
       });
   };
 }
+
+export const requestBatchStockData = symbols => ({
+  type: types.REQUEST_BATCH_STOCK_DATA,
+  symbols: symbols
+});
 
 export const updateBatchStockData = json => ({
   type: types.UPDATE_BATCH_STOCK_DATA,
