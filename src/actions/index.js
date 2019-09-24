@@ -10,7 +10,7 @@ import v4 from "uuid";
 export function fetchBatchStockData(symbols) {
   return function(dispatch) {
     dispatch(requestBatchStockData(symbols));
-    let joinSymbols = symbols.join(",");
+    symbols.join(",");
     return fetch(
       `https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&apikey=${
         process.env["API_KEY"]
@@ -57,3 +57,29 @@ export const updateDailyStockData = json => ({
   type: types.UPDATE_DAILY_STOCK_DATA,
   json: json
 });
+
+export const requestCryptoDailyData = symbol => ({
+  type: types.REQUEST_CRYPTO_DAILY_DATA,
+  symbol: symbol
+});
+
+export const updateCryptoDailyData = (symbol, json) => ({
+  type: types.UPDATE_CRYPTO_DAILY_DATA,
+  symbol: symbol,
+  json: json
+});
+
+export function fetchCryptoDailyData(symbol) {
+  return function(dispatch) {
+    dispatch(requestCryptoDailyData(symbol));
+    return fetch(
+      `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=${symbol}&to_currency=USD&apikey=${
+        process.env["API_KEY"]
+      }`
+    )
+      .then(response => response.json())
+      .then(json => {
+        dispatch(updateCryptoDailyData(symbol, json));
+      });
+  };
+}
