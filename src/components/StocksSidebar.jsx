@@ -16,7 +16,6 @@ class StocksSidebar extends React.Component {
   render() {
     let stocksList;
     if (this.props.state.batchStockData.loading === false) {
-      console.log(this.props.state.batchStockData["Stock Quotes"]);
       stocksList = this.props.state.batchStockData["Stock Quotes"].map(
         stock => {
           // for some reason the arrow function REALLY needs an explicit return statement here
@@ -24,7 +23,7 @@ class StocksSidebar extends React.Component {
         }
       );
     }
-    return <div>{stocksList}</div>;
+    return <div className="sidebar">{stocksList}</div>;
   }
 }
 

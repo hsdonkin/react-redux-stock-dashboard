@@ -1,14 +1,21 @@
-.container {
-    margin: auto;
-    text-align: center;
-    max-width: 600px;
-
-    &__image {
-        width: 100px;
-        height: auto;
-    }
+.page-wrap {
+  margin: auto;
+  width: 80%;
+  text-align: center;
 }
 
-.left {
-    text-align: left;
+.header {
+  color: lightcoral;
+  font-size: 4rem;
+  text-align: left;
+  -webkit-text-stroke: 2px solid gray;
+}
+
+.sidebar {
+  display: inline;
+  float: left;
+}
+
+.chart-holder {
+  display: inline-block;
 }
